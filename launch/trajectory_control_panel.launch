@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find robot)/launch/joystick.launch"/>
+
+    <node name="control_manager" pkg="robot" type="trajectory_controlpanel.py" output="screen" />
+
+    <node name="sensor_publisher" pkg="robot" type="Bleak_rosnode.py" output="screen" />
+
+    <node pkg="tracker_visp" type="arduino_base.py" name="arduino_rotating_base" />
+    
+</launch>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>	    
+  <rosparam file="$(find robot)/config/controllers.yaml" command="load"/>
+  <rosparam file="$(find robot)/config/joint_limits.yaml" command="load"/>
+  <rosparam file="$(find robot)/config/ros_controllers.yaml" command="load"/>
+  <node name="MyRobotHardwareInterface" pkg="controller" type="edo_hardware_inerface_node" output="screen"/>
+  
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="
+            /MyRobot/joints_update
+            /MyRobot/edo_controller
+
+        "/> 
+
+  <!--
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+  output="screen" args="edo_controller"/> -->
+
+</launch>
+

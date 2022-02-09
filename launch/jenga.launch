@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- <include file="$(find robot)/launch/joystick.launch"/> -->
+
+    <node name="control_manager" pkg="robot" type="trajectory_controlpanel.py" output="screen" />
+
+    <node name="sensor_publisher" pkg="robot" type="Bleak_rosnode.py" output="screen" />
+
+    <node pkg="tracker_visp" type="arduino_base.py" name="arduino_rotating_base" />
+
+    <node pkg="tracker_visp" type="Yolact_server_Pose_initializer.py" name="pose_initializer" />
+
+    
+    <node pkg="tracker_visp" type="Yolact_first_detection.py" name="firstlayer_initializer" />
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="ee2cam"
+        args="-0.052 0.032 0.0 0 0 -0.7071068 0.7071068 edo_link_6 camera_color_optical_frame" /> 
+
+
+    <node pkg="tracker_visp" type="visualServo" name="pbvs_node" />
+
+    <node pkg="jenga_policy" type="policy.py" name="policy" output="screen"/>
+
+
+
+    
+    
+</launch>

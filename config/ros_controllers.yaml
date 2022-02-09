@@ -1,0 +1,54 @@
+MyRobotHardwareInterface:
+  joints:
+    - edo_joint_1
+    - edo_joint_2
+    - edo_joint_3
+    - edo_joint_4
+    - edo_joint_5
+    - edo_joint_6
+
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+MyRobot:
+  edo_controller:
+    type: position_controllers/JointGroupPositionController
+    joints:
+      - edo_joint_1
+      - edo_joint_2
+      - edo_joint_3
+      - edo_joint_4
+      - edo_joint_5
+      - edo_joint_6
+    gains:
+      edo_joint_1:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1
+      edo_joint_2:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1
+      edo_joint_3:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1
+      edo_joint_4:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1
+      edo_joint_5:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1
+      edo_joint_6:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1

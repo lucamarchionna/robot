@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>	
+
+	<node name="avoid_obstacle" pkg="robot" type="obstacle_avoidance.py" output="screen" >
+  	</node>
+
+</launch>
+

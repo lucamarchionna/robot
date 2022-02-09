@@ -1,0 +1,36 @@
+MyRobot:
+
+
+    # Publish all joint states
+    joints_update:
+      type: joint_state_controller/JointStateController
+      publish_rate: 50
+    
+
+    edo_joint_1_PositionController:
+      type: position_controllers/JointPositionController    # Since JointC uses position interface this controller type is  used 
+      joint: edo_joint_1
+
+    edo_joint_2_PositionController:
+      type: position_controllers/JointPositionController    # Since JointC uses position interface this controller type is  used 
+      joint: edo_joint_2
+
+    edo_joint_3_PositionController:
+      type: position_controllers/JointPositionController    # Since JointC uses position interface this controller type is  used 
+      joint: edo_joint_3
+
+    edo_joint_4_PositionController:
+      type: position_controllers/JointPositionController    # Since JointC uses position interface this controller type is  used 
+      joint: edo_joint_4
+
+    edo_joint_5_PositionController:
+      type: position_controllers/JointPositionController    # Since JointC uses position interface this controller type is  used 
+      joint: edo_joint_5
+
+    edo_joint_6_PositionController:
+      type: position_controllers/JointPositionController    # Since JointC uses position interface this controller type is  used 
+      joint: edo_joint_6 
+      
+    edo_joint_6_PositionController:
+      type: position_controllers/JointPositionController    # Since JointC uses position interface this controller type is  used 
+      joint: edo_joint_6 
