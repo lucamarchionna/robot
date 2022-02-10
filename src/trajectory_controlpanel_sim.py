@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import math
 from matplotlib.transforms import Transform
@@ -14,7 +14,7 @@ from edocontroller import EdoFactory, REAL_ROBOT
 from std_msgs.msg import String, Float32, Int32, Float64, Bool
 from geometry_msgs.msg import Pose, PoseStamped, TwistStamped, Quaternion, TransformStamped
 from sensor_msgs.msg import JointState
-from obstacle_avoidance import obstacle_AttachAdd, clean_scene
+# from obstacle_avoidance import obstacle_AttachAdd, clean_scene
 from velocityController import VelocityController
 from positionbased_vs.srv import InitialGuess
 from tracker_visp.msg import *
@@ -1100,18 +1100,18 @@ def generalCallback(data):
         controller.go_to_joint2(js[0], js[1], js[2], js[3], js[4], js[5])
 
 def init_Jenga():
-    play = input('Do you want to play Jenga? [y/n]:')
+    #play = input('Do you want to play Jenga? [y/n]:')
 
-    if play=='y' or  play=='Y' or  play=='yes' or  play=='Yes' or  play=='YES':
-        serv_FirstLayerPose = rospy.Service('FirstLayerPose', FirstLayerPose, FirstLayerPoseCallback)
-        serv_BlockEstimation = rospy.Service('/BlockEstimation', BlockEstimation, BlockEstimationCallback)
-        print("Great! Let's begin")
+    #if play=="y" or  play=="y" or  play=="yes" or  play=="Yes" or  play=="YES":
+    serv_FirstLayerPose = rospy.Service('FirstLayerPose', FirstLayerPose, FirstLayerPoseCallback)
+    serv_BlockEstimation = rospy.Service('/BlockEstimation', BlockEstimation, BlockEstimationCallback)
+    print("Great! Let's begin")
 
-    elif play=='n' or  play=='N' or  play=='no' or  play=='No' or  play=='NO':
-        print("I am so sorry")
+    #elif play=="n" or  play=="N" or  play=="no" or  play=="No" or  play=="NO":
+     #   print("I am so sorry")
 
-    else:
-        print("Please enter a correct answer")
+    #else:
+        #print("Please enter a correct answer")
 
 
 Flag=False

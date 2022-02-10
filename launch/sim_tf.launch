@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<launch>
+
+    <!-- 
+    <node pkg="tf2_ros" type="static_transform_publisher" name="w2target" 
+        args="0.35 -0.004 0.7253 0.5 -0.5 0.5 -0.5 world handeye_target" /> -->
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="ee2cam"
+        args="-0.052 0.032 0.0 0 0 -0.7071068 0.7071068 edo_link_6 camera_color_optical_frame" />   
+
+<!-- 
+    <node pkg="positionbased_vs" type="bridge_sim.py" name="bridge2sim" output="screen"/>  -->
+     
+</launch>
